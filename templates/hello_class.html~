@@ -1,0 +1,8 @@
+<html>
+<body>
+
+Hi {{name}},
+this TEMPLATE SEEM TO HAVE WORKED. i have very happy now .
+
+</body>
+</html>

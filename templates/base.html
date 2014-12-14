@@ -1,0 +1,68 @@
+<html>
+        <head>
+            <title>{% block title  %} by base templae{% endblock %}</title>
+            
+            <style type="text/css">
+                
+                body{
+                    text-align: center;
+                }
+                
+                #page {
+                    width: 960px;
+                    text-align: left;
+                    margin: 10px auto 20px auto;
+                    background-color: green;
+                    
+                }
+                        
+                #sidebar { 
+                    float: left;
+                    width: 200px;
+                    border: 2px solid green;
+                }
+            
+                #content {
+                    float: left;
+                    width: 600px;
+                    border: 2px solid red;
+                    padding: 50px;
+                }
+
+            </style>
+        </head>
+        <body>
+
+            
+            <div id="page">
+                
+                <div id="sidebar">
+                    {% block sidebar %}
+                    <ul>
+                        <li><a href="/articles/all">ALL</a></li>
+                        <li><a href="/articles/all">Tech World</a></li>
+                        <li><a href="/p_articles/p_all">Politics</a></li>
+                        <li><a href="/e_articles/e_all">Education</a></li>
+                        <li><a href="/s_articles/s_all">Science</a></li>                    
+                        <li><a href="/en_articles/en_all">Entertaiment</a></li>
+                        <li><a href="/admin/">Admin</a></li>
+                        <li><a href="/articles/create">Create</a></li>
+                       <li><a href="/p_articles/p_create">Create</a></li>
+                        
+                    </ul>
+                    
+                    {% endblock %}
+                </div> 
+                
+                
+                <div id="content">
+                    {% block content %}{% endblock %}
+                    
+                </div>
+             
+             </div>   
+        
+    
+        </body>
+        
+    </html>

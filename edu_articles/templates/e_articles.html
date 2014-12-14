@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <li><a href="/e_articles/e_create">Create</a></li>
+{% if e_articles.count > 0 %}
+
+{% for article in e_articles %}
+    
+<div>
+
+<h2><a href="/e_articles/e_get/{{ article.id }}">{{ article.title }} </a></h2>
+<p>{{ article.body|lower|truncatewords:"10" }}</p
+<p>{{ article.likes }} People liked this article</p>
+
+</div>
+{% endfor %}
+
+{% else %}
+    <p> None to show</p>
+{% endif %}    
+
+{% endblock %}

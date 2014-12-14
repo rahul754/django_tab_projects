@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+<ul>
+    <li><a href="/p_articles/p_get/{{p_article.id}}">Cancel</a></li>
+</ul>
+{% endblock %}
+
+{% block content %}
+
+<form action="/p_articles/p_add_commentsecond/{{p_article.id}}/" method="post">{% csrf_token %}
+
+<ul>
+{{form.as_p}}
+</ul>
+
+<input type="submit" name="commentsecond" value="Post unlike Comment">
+</form>
+
+{% endblock %}

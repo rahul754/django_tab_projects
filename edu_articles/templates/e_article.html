@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<!-- title and body content start -->
+
+<h2>{{ e_article.title }}</h2>
+<p>{{ e_article.body }}</p>
+
+<p>{{ e_article.likes }} People liked this article</p>
+<p><a href="/e_articles/e_like/{{e_article.id}}">Like</a></p>
+<!-- finish title and body box-->
+
+
+
+<!-- start first comment box-->
+
+<div style="float:left; width:300px;">
+
+<h2>Like Comment</h2>
+{% for c in e_article.comment_set.all %}
+<p>{{c.first_name}} : {{c.body|lower|truncatechars:140}} 
+<a href="/e_articles/e_delete_comment/{{c.id}}">Delete</a>
+</p>
+{% endfor %}
+
+<p><a href="/e_articles/e_add_comment/{{e_article.id}}">Add Comment</a></p>
+
+</div>
+
+
+<!-- finish first comment box-->
+
+
+
+<!-- start second comment box-->
+
+
+<div style="float:right; width:300px;">
+
+<h2>UNLIKE Comment </h2>
+{% for cs in e_article.commentsecond_set.all %}
+<p>{{cs.first_name}}: {{cs.body|lower|truncatechars:140}} 
+<a href="/e_articles/e_delete_commentsecond/{{p_cs.id}}">Delete</a>
+</p>
+{% endfor %}
+
+<p><a href="/e_articles/e_add_commentsecond/{{e_article.id}}">Add Comment</a></p>
+
+</div>
+
+
+
+<!-- finish  second comment box-->
+
+
+{% endblock %}
+
